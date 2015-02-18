@@ -5,6 +5,7 @@ from collections import defaultdict
 
 import requests
 
+from secret import USERNAME, PASSWORD
 
 #this function takes a GitHub username as an argument and returns their info
 def get_repositories(user):
@@ -12,7 +13,7 @@ def get_repositories(user):
 
 	
 	url = "https://api.github.com/users/{user}/repos".format(user=user)
-	response = requests.get(url) #GET the request to the endpoint
+	response = requests.get(url, auth=(USERNAME, PASSWORD)) #GET the request to the endpoint
 	return response.json() #parse the JSON and return it as a Python list
 
 def main():
