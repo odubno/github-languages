@@ -1,2 +1,0 @@
-USERNAME = "odubno"
-PASSWORD = "oleh153467"
